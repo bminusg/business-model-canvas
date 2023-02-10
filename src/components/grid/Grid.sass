@@ -1,0 +1,41 @@
+.grid
+    padding: 4rem
+    max-width: 1280px
+    margin: 0 auto
+    display: grid
+    gap: 1rem
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-rows: repeat(3, 1fr)
+    grid-template-areas: "key_partners key_activities value_propositions value_propositions customer_relationships customer_segments" "key_partners key_ressources value_propositions value_propositions channels customer_segments" "cost_structure cost_structure cost_structure revenue_streams revenue_streams revenue_streams"
+
+    &--item
+        border-radius: 1rem
+        padding: 2rem
+        background-color: #1a1a1a
+
+        &-customer_segments
+            grid-area: customer_segments
+        
+        &-customer_relationships
+            grid-area: customer_relationships
+        
+        &-value_propositions
+            grid-area: value_propositions
+
+        &-channels
+            grid-area: channels
+        
+        &-key_partners
+            grid-area: key_partners
+        
+        &-key_activities
+            grid-area: key_activities
+
+        &-key_ressources
+            grid-area: key_ressources
+        
+        &-cost_structure
+            grid-area: cost_structure
+        
+        &-revenue_streams
+            grid-area: revenue_streams

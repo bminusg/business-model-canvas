@@ -1,0 +1,33 @@
+{
+  "title": "Project Name",
+  "version": 1,
+  "areas": {
+    "key_partners": {
+      "desc": "Lorem ipsum"
+    },
+    "key_activities": {
+      "desc": "Lorem ipsum"
+    },
+    "key_ressources": {
+      "desc": "Lorem ipsum"
+    },
+    "value_propositions": {
+      "desc": "Lorem ipsum"
+    },
+    "customer_relationships": {
+      "desc": "Lorem ipsum"
+    },
+    "channels": {
+      "desc": "Lorem ipsum "
+    },
+    "customer_segments": {
+      "desc": "Lorem ipsum"
+    },
+    "cost_structure": {
+      "desc": "Lorem ipsum"
+    },
+    "revenue_streams": {
+      "desc": "How do customers reward you for the value you provide to them? What are the different revenue models?"
+    }
+  }
+}
