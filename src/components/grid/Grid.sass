@@ -1,17 +1,33 @@
+@use "../../sass/abstracts/mixins" as *
+
 .grid
     padding: 4rem
-    max-width: 1280px
+    max-width: 1536px
     margin: 0 auto
     display: grid
     gap: 1rem
-    grid-template-columns: repeat(6, 1fr)
+    grid-template-columns: repeat(2, 1fr) repeat(2, 0.5fr) repeat(2, 1fr)
     grid-template-rows: repeat(3, 1fr)
     grid-template-areas: "key_partners key_activities value_propositions value_propositions customer_relationships customer_segments" "key_partners key_ressources value_propositions value_propositions channels customer_segments" "cost_structure cost_structure cost_structure revenue_streams revenue_streams revenue_streams"
 
+    @media screen and (max-width: 1007px)
+        grid-template-columns: 1fr
+        grid-template-rows: repeat(9, 1fr)
+        grid-template-areas: "key_partners" "key_activities" "key_ressources" "value_propositions" "customer_relationships" "customer_segments" "channels" "cost_structure" "revenue_streams"
+
     &--item
         border-radius: 1rem
-        padding: 2rem
+        padding: 1.5rem
         background-color: #1a1a1a
+
+        &-footer
+            &__textarea
+                box-sizing: border-box
+                padding: 0.5rem
+                width: 100%
+                outline: none
+                resize: none
+                overflow: auto
 
         &-customer_segments
             grid-area: customer_segments
@@ -39,3 +55,6 @@
         
         &-revenue_streams
             grid-area: revenue_streams
+
+        &-subline
+            @include subline()

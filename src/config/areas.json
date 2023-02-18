@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "key_partners",
+    "title": "Key partners",
+    "desc": "Who are your most important partners? Which key ressources do you acquire from partners? Which key activities do your partners perform?"
+  },
+  {
+    "slug": "key_activities",
+    "title": "Key activities",
+    "desc": "What are the activities you perform every day to create & deliver your value proposition"
+  },
+  {
+    "slug": "key_ressources",
+    "title": "Key ressources",
+    "desc": "What are the resources you need to create & deliver your value proposition?"
+  },
+  {
+    "slug": "value_propositions",
+    "title": "Value propositions",
+    "desc": "What is the value you delivery to your customer? Which of your customer's problems are you helping to solve? What is the customer need that your value proposition addresses? What is your promise to your customers? What are the products and services you create for your customers?"
+  },
+  {
+    "slug": "customer_relationships",
+    "title": "Customer relationships",
+    "desc": "What relationship does each customer segment expect you to establish and maintain?"
+  },
+  {
+    "slug": "channels",
+    "title": "Channels",
+    "desc": "How does your value proposition reach your customer? Where can your customer buy or use your products or services?"
+  },
+  {
+    "slug": "customer_segments",
+    "title": "Customer segments",
+    "desc": "For whom are you creating value? What are the customer segments that either pay, receive or decide on your value proposition?"
+  },
+  {
+    "slug": "cost_structure",
+    "title": "Cost structure",
+    "desc": "What are the important costs you make to create & delivery your value propostion?"
+  },
+  {
+    "slug": "revenue_streams",
+    "title": "Revenue streams",
+    "desc": "How do customers reward you for the value you provide to them? What are the different revenue models?"
+  }
+]

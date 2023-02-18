@@ -1,10 +1,10 @@
-import data from "../../config/data.json";
+import areas from "../../config/areas.json";
+import GridItem from "./GridItem";
 import "./Grid.sass";
 
 function Grid() {
-  // INSPIRED BY s3-eu-central-1.amazonaws.com/business-models-inc/wp-content/uploads/2018/06/13071524/BMI•Business-model-canvas.jpg
-  const gridItems = Object.keys(data.areas).map((area) => (
-    <div className={`grid--item grid--item-${area}`}>{area}</div>
+  const gridItems = areas.map((area) => (
+    <GridItem item={area} key={area.slug}></GridItem>
   ));
 
   return <div className="grid">{gridItems}</div>;

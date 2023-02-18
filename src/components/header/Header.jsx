@@ -1,12 +1,16 @@
-import data from "../../config/data.json";
+import { useContext } from "react";
+import { InputContext } from "../../App";
 import "./Header.sass";
 
 function Header() {
+  const { input } = useContext(InputContext);
   return (
     <header className="header">
       <div className="header--title-wrapper">
-        <span className="header--title">{data.title}</span> <br />
-        <span>Business Model Canvas | Version {data.version}</span>
+        <span className="header--title">{input.title}</span> <br />
+        <span className="header--subtitle">
+          Business Model Canvas | Version {input.version}
+        </span>
       </div>
     </header>
   );

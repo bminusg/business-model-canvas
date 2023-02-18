@@ -1,8 +1,16 @@
+@use "../../sass/abstracts/mixins" as *
+
 .header
-    width: calc(100vw - 20px)
+    width: 100%
     background-color: #1a1a1a
-    padding: 0.5rem
 
     &--title
         font-size: 1.2rem
         font-weight: bold
+
+        &-wrapper
+            line-height: 1.2
+            padding: 0.5rem
+
+    &--subtitle
+        @include subline()
