@@ -7,12 +7,12 @@ function GridItem(area) {
   const [inputTxt, setInputTxt] = useState("");
   const itemPoints = input[item.slug].map((inputItem) => (
     <li className="input--list-item" key={self.crypto.randomUUID()}>
-      {inputItem}
+      <span>{inputItem}</span>
+      <i className="gg-remove"></i>
     </li>
   ));
 
   function addInput() {
-    console.log("ADDING INPUT");
     const mergedInput = [...input[item.slug], inputTxt];
 
     setInput({ ...input, [item.slug]: mergedInput });
@@ -38,7 +38,10 @@ function GridItem(area) {
           value={inputTxt}
           onChange={(e) => setInputTxt(e.target.value)}
         ></textarea>
-        <button onClick={addInput}>Add</button>
+        <button onClick={addInput}>
+          <i className="gg-add"></i>
+          <span>Add</span>
+        </button>
       </div>
     </div>
   );

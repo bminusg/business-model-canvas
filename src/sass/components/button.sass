@@ -1,0 +1,36 @@
+.btn
+    cursor: pointer
+    display: flex
+    align-items: center
+    gap: var(--gap-xxs)
+    line-height: 1
+    background-color: transparent
+    border: none
+    text-transform: uppercase
+
+    i
+        transform: scale(0.75)
+
+    &--primary
+        background-color: var(--color-primary)
+        padding: var(--gap-xs)
+        border-radius: var(--gap-xxs)
+
+        &:hover
+            i
+                animation: button-icon 0.6s linear forwards
+
+                @keyframes button-icon
+                    33%
+                        transform: matrix(0.5,0,0,0.5,0,-15)
+                        opacity: 0
+
+                    66%
+                        transform: matrix(0.5,0,0,0.5,0,15)
+                        opacity: 0
+                        animation-timing-function: var(--ease-out)
+
+                    0%, 100%
+                        transform: matrix(0.75,0,0,0.75,0,0)
+                        opacity: 1
+                        animation-timing-function: var(--ease-in)

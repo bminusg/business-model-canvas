@@ -3,6 +3,9 @@
 .header
     width: 100%
     background-color: #1a1a1a
+    display: flex
+    justify-content: space-between
+    align-items: center
 
     &--title
         font-size: 1.2rem
@@ -14,3 +17,32 @@
 
     &--subtitle
         @include subline()
+
+    &--action
+        &-share
+            position: relative
+            display: flex
+            align-items: center
+
+            &__feedback
+                position: absolute
+                right: calc(100% + var(--gap-xs))
+                font-size: var(--gap-xs)
+                color: var(--color-primary)
+                width: max-content
+                display: flex
+                align-items: center
+                transform: matrix(0.75, 0, 0, 0.75, 15, 0)
+                transform-origin: right center
+                opacity: 0
+
+                &.is--triggerd
+                    animation: triggerd 2s var(--ease-in-out)
+
+                    @keyframes triggerd
+                        0%, 100%
+                            transform: matrix(0.75, 0, 0, 0.75, 15, 0)
+                            opacity: 0
+                        25%, 75%
+                            transform: matrix(1, 0, 0, 1, 0, 0)
+                            opacity: 1
