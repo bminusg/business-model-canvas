@@ -6,6 +6,7 @@ import "./Header.sass";
 
 function Header() {
   const { input, setInput } = useContext(InputContext);
+  const [editTitle, setEditTitle] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
   function share() {
@@ -26,14 +27,39 @@ function Header() {
     setInput(defaultConfig);
   }
 
+  function toggleEditTitle() {
+    setEditTitle(!editTitle);
+  }
+
   return (
     <header className="header">
       <div className="header--title-wrapper">
         <div className="header--title">
-          <span className="header--title-txt">{input.title}</span>
-          <span className="header--title-edit">
-            <i className="fas fa-edit"></i>
-          </span>
+          {editTitle ? (
+            <div className="header--title-edit">
+              <input
+                type="text"
+                value={input.title}
+                onChange={(e) => setInput({ ...input, title: e.target.value })}
+              ></input>
+              <div
+                className="header--title-edit__trigger"
+                onClick={toggleEditTitle}
+              >
+                <i className="fas fa-check-circle"></i>
+              </div>
+            </div>
+          ) : (
+            <>
+              <span className="header--title-txt">{input.title}</span>
+              <span
+                className="header--title-edit__trigger"
+                onClick={toggleEditTitle}
+              >
+                <i className="fas fa-edit"></i>
+              </span>
+            </>
+          )}
         </div>
         <span className="header--subtitle">Business Model Canvas</span>
       </div>
