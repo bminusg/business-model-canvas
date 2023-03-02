@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
 import { InputContext } from "../../App";
+import defaultConfig from "../../config/input.json";
 import JSONcrush from "jsoncrush";
 import "./Header.sass";
 
 function Header() {
-  const { input } = useContext(InputContext);
+  const { input, setInput } = useContext(InputContext);
   const [isCopied, setIsCopied] = useState(false);
 
   function share() {
@@ -20,14 +21,20 @@ function Header() {
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 2000);
   }
+
+  function reset() {
+    setInput(defaultConfig);
+  }
+
   return (
     <header className="header">
       <div className="header--title-wrapper">
-        <span className="header--title">{input.title}</span>
-        <span className="header--title-edit">
-          <i className="gg-pen"></i>
-        </span>
-        <br />
+        <div className="header--title">
+          <span className="header--title-txt">{input.title}</span>
+          <span className="header--title-edit">
+            <i className="fas fa-edit"></i>
+          </span>
+        </div>
         <span className="header--subtitle">Business Model Canvas</span>
       </div>
       <div className="header--action-wrapper">
@@ -46,8 +53,15 @@ function Header() {
             className="header--action-share__btn btn btn--primary"
             onClick={share}
           >
-            <i className="gg-clipboard"></i>
+            <i className="fas fa-copy"></i>
             <span>Share</span>
+          </button>
+          <button
+            className="header--action-reset__btn btn btn--primary-ghost"
+            onClick={reset}
+          >
+            <i className="fas fa-toilet"></i>
+            <span>Reset</span>
           </button>
         </div>
       </div>
