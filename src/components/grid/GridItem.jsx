@@ -6,7 +6,10 @@ function GridItem(area) {
   const { input, setInput } = useContext(InputContext);
   const [inputTxt, setInputTxt] = useState("");
   const itemPoints = input[item.slug].map((inputItem) => (
-    <li className="input--list-item" key={self.crypto.randomUUID()}>
+    <li
+      className="input--list-item"
+      key={(Math.random() + 1).toString(36).substring(7)}
+    >
       <span>{inputItem}</span>
       <i className="gg-remove"></i>
     </li>
@@ -38,8 +41,8 @@ function GridItem(area) {
           value={inputTxt}
           onChange={(e) => setInputTxt(e.target.value)}
         ></textarea>
-        <button onClick={addInput}>
-          <i className="gg-add"></i>
+        <button className="btn btn--secondary" onClick={addInput}>
+          <i className="fas fa-plus"></i>
           <span>Add</span>
         </button>
       </div>

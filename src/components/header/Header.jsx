@@ -12,15 +12,28 @@ function Header() {
   function share() {
     const crush = JSONcrush.crush(JSON.stringify(input));
     const hash = btoa(crush);
-    const href = window.location.href.substring(
-      0,
-      window.location.href.indexOf("#")
-    );
+    let href = window.location.href;
 
-    navigator.clipboard.writeText(href + "#" + hash);
+    if (href.includes("#"))
+      href = href.substring(0, window.location.href.indexOf("#"));
 
-    setIsCopied(true);
-    setTimeout(() => setIsCopied(false), 2000);
+    try {
+      const storage = document.createElement("textarea");
+      const element = document.querySelector("body");
+
+      storage.value = href + "#" + hash;
+      element.appendChild(storage);
+
+      storage.select();
+      storage.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      element.removeChild(storage);
+
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   function reset() {
